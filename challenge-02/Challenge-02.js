@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 
 
 function myFunction2(a, b, c){
-    if(a == null || b == null || c == null){
+    if(a === undefined || b === undefined || c === undefined){
         return 'Preencha todos os valores corretamente!';
     }
     else{
@@ -79,16 +79,16 @@ Crie uma função com as seguintes características:
 
 
 function myFunction3(a, b, c){
-    if(a != null && b == null && c == null){
+    if(a !== undefined && b === undefined && c === undefined){
         return a;
     }
-    else if(a != null && b != null && c == null){
+    else if(a !== undefined && b !== undefined && c === undefined){
         return a + b;
     }
-    else if(a != null && b != null && c != null){
+    else if(a !== undefined && b !== undefined && c !== undefined){
         return (a + b) / c;
     }
-    else if(a == null && c == null && c == null){
+    else if(a === undefined && c === undefined && c === undefined){
         return false;
     }
     else{
