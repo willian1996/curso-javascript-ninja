@@ -1,4 +1,3 @@
-# Desafio da semana #4
 
 
 /*
@@ -8,11 +7,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(a){
-    if(a){
-        return true;
-    }else{
-        return false;
-    }
+   return !!a;
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -105,17 +100,13 @@ seguintes características:
 - Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
 poucos.
-
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
-
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
-
 - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
 parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
 "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
-
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
