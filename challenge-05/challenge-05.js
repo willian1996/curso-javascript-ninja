@@ -23,8 +23,8 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function myFunction(array1, indice){
-    return array1[indice];
+function myFunction(arr, indice){
+    return arr[indice];
 }
 
 /*
@@ -63,6 +63,9 @@ propriedades:
 os livros.
 */
 
+
+
+
 function book(nomeLivro){
     var obj = {
         harry_potter_pedra_filosofal: {
@@ -81,9 +84,9 @@ function book(nomeLivro){
             editora: 'Kirkman',
         }
     }
-    var interBook = nomeLivro;
+    
     if(nomeLivro != undefined){
-        return obj.interBook;
+        return obj[nomeLivro];
     }else{
         return obj;
     }
@@ -96,25 +99,30 @@ function book(nomeLivro){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var bookName = 'harry_potter_pedra_filosofal';
+'O livro '+bookName+' tem '+book(bookName).quantidadePaginas+' páginas!';
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+
+'O autor do livro '+bookName+' é '+book(bookName).autor+'.';
+
+
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+'O livro '+bookName+' foi publicado pela editora '+book(bookName).editora+'.';
