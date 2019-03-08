@@ -83,7 +83,7 @@
             return false;
         }else if(isOperatorValid(operator) === true){
             return function(num1, num2){
-                if(typeof num1 !== 'number' || typeof num2 !== 'number'){
+                if(typeof num1 !== 'number' && typeof num2 !== 'number'){
                     return false;
                 }else{
                     return operation[operator](num1,num2);
@@ -103,8 +103,8 @@
     Essa função mostrará a mensagem da operação que criaremos mais abaixo.
     */
 
-    function showOperationMessage( num1, operador, num2){
-        return 'A operação '+num1+' '+operador+' '+num2+' =';
+    function showOperationMessage(operador){
+        return 'A operação '+number1+' '+operador+' '+number2+' =';
     }
 
     /*
@@ -153,7 +153,14 @@
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
 
-    console.log(sum(2,8));
+    if(sum){
+        number1 = 10;
+        number2 = 12;
+        console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
+    }
+    else{
+        console.log(showErrorMessage(operationSignal));
+    }
 
 
     /*
@@ -164,23 +171,47 @@
 
     operationSignal = '-';
     var subtract = calculator(operationSignal);
-    console.log(subtract(10,8));
-    // 2
+    if(subtract){
+        number1 = 20;
+        number2 = 12;
+        console.log(showOperationMessage(operationSignal, number1, number2), subtract(number1, number2));
+    }
+    else{
+        console.log(showErrorMessage(operationSignal));
+    }
 
     operationSignal = '*';
     var multiplication = calculator(operationSignal);
-    console.log(multiplication(8,9));
-    //72
+    if(multiplication){
+        number1 = 8;
+        number2 = 9;
+        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+    }
+    else{
+        console.log(showErrorMessage(operationSignal));
+    }
 
     operationSignal = '/';
     var division = calculator(operationSignal);
-    console.log(division(90,3));
-    //30
+    if(division){
+        number1 = 93;
+        number2 = 3;
+        console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+    }
+    else{
+        console.log(showErrorMessage(operationSignal));
+    }
 
     operationSignal = '%';
     var mod = calculator(operationSignal);
-    console.log(mod(256,2));
-    //0
+    if(mod){
+        number1 = 93;
+        number2 = 2;
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+    }
+    else{
+        console.log(showErrorMessage(operationSignal));
+    }
 
 
     /*
@@ -189,6 +220,13 @@
     */
     operationSignal = '#';
     var hashtag = calculator(operationSignal);
-    console.log(hashtag(5,7));
+    if(hashtag){
+        number1 = 93;
+        number2 = 2;
+        console.log(showOperationMessage(operationSignal, number1, numver2), hashtag(number1, number2));
+    }
+    else{
+        console.log(showErrorMessage(operationSignal));
+    }
 
 }());
