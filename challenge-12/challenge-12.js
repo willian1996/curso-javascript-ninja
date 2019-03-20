@@ -15,7 +15,7 @@
         name: 'Willian',
         lastname: 'Sales',
         age: 23
-    }
+    };
     console.log( 'Propriedades de "person":' );
 
     /*
@@ -35,18 +35,17 @@
     `name`: String
     `pages`: Number
     */
-    books.push(book3 = {
+    books.push({
 	name: 'pure mathematics',
 	pages: 783
     });
     
-    books.push(book2 = {
+    books.push({
 	name: 'Mathematical logic',
 	pages: 356
     });
     
-    books.push(
-	book1 = {
+    books.push({
 		name: 'The Essential Turing: Seminal Writings in Computing',
 		pages: 259
 		
@@ -101,12 +100,17 @@
         "[PROPRIEDADE]: [VALOR]"
     */
     
+    for(var i = 0;i < books.length;i++){
+        for(var prop in books[i]){
+            console.log(prop +' : '+ books[i][prop]);
+        }
+    }
 
     /*
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
     seu nome. Adicione seu nome completo no array.
     */
-    var myName = ['w', 'i', 'l', 'l', 'i', 'a', 'n', 's', 'a', 'l', 'e', 's', 'g', 'a', 'b', 'r', 'i',  'e', 'l' ];
+    var myName = ['w', 'i', 'l', 'l', 'i', 'a', 'n'];
     console.log( '\nMeu nome é:' );
 
     /*
@@ -119,7 +123,7 @@
     /*
     Ainda usando o objeto acima, mostre no console seu nome invertido.
     */
-    myName.reverse();
+    console.log(myName.reverse());
 
     console.log( '\nAgora em ordem alfabética:' );
     /*
