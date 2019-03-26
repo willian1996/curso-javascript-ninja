@@ -60,7 +60,15 @@
     /*
     Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
     */
-    var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe'];
+    var nordeste = ['Alagoas',
+                    'Bahia',
+                    'Ceará',
+                    'Maranhão',
+                    'Paraíba',
+                    'Pernambuco',
+                    'Piauí',
+                    'Rio Grande do Norte', 'Sergipe'
+                   ];
 
     /*
     Mostre no console os estados do nordeste.
@@ -72,13 +80,13 @@
     Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
     chamada `newSudeste`.
     */
-    var newSudeste = brasil.splice(5,9);
+    var newSudeste = brasil.splice(5,4);
 
     /*
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
-    brasil.splice(4,0,'Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe');
+    brasil = brasil.concat(nordeste);
 
     /*
     Mostre no console os estados em `newSudeste`.
@@ -121,7 +129,7 @@
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
     
     
-    var result = brasil.every(function(item, index, array){
+    var result = brasil.every(function(item){
         return item.length > 7;
         
     })
@@ -160,9 +168,12 @@
     - "[ESTADO] pertence ao Brasil."
     Atribua o novo array a uma variável chamada `map`.
     */
-    var map = newBrasil.map(function(item, index, array){
-        item.id +=1;
-        return item.estado+' pertence ao Brasil.';
+    var map = newBrasil.map(function(item, index){
+        return {
+            id: item.id + 1,
+            estado: item.estado + ' pertence ao Brasil.'
+        };
+        
         
     });
 
