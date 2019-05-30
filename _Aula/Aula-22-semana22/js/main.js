@@ -2,25 +2,17 @@
     'use strict';
     
     
-    function MyFunction(name, lastName){
-        this.name = name;
-        this.lastName = lastName;
-        this.age = 30;
+    function myFunction(){
+        var result = Array.prototype.reduce.call(arguments, function(acumulated, actual, index){
+            return acumulated + actual;
+        });
+        
+        console.log(result);
+        
+        
     }
     
-    MyFunction.prototype.fullName = function(){
-        return this.name + ' ' + this.lastName;
-    }
-    
-    
-    
-    var willian = new MyFunction('Willian', 'Sales');
-    
-    
-    MyFunction.prototype.age = 20;
-    
-    console.log( willian.age );
-    
+    myFunction(1,2,3,4,5,6,7,8);
     
     
     
