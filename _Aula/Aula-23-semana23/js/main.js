@@ -2,15 +2,14 @@
     'use strict';
     
     
+    var arr = [
+        {item: 'Arroz', price: 'R$ 10', wight: '1kg'},
+        {item: 'Feijão', price: 'R$ 20', wight: '2kg'},
+        {item: 'Macarrão', price: 'R$ 12', wight: '1/2 kg'},
+        {item: 'Carne', price: 'R$ 30', wight: '5kg'}
+    ];
     
-    function sum(){
-        return Array.prototype.reduce.call(arguments, function(accumulated, item){
-            return accumulated + item;
-        });
-        
-        
-    }
-    console.log(sum(1,21,32,4));
+    console.table(arr);
     
 })(window, document);
 
