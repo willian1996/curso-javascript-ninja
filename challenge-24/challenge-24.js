@@ -16,6 +16,7 @@ var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]
 var $buttonCE = document.querySelector('[data-js="button-ce"]');
 var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
+
 Array.prototype.forEach.call($buttonsNumbers, function(button) {
   button.addEventListener('click', handleClickNumber, false);
 });
@@ -23,6 +24,7 @@ Array.prototype.forEach.call($buttonsOperations, function(button) {
   button.addEventListener('click', handleClickOperation, false);
 });
 $buttonCE.addEventListener('click', handleClickCE, false);
+$buttonEqual.addEventListener('click', handleClickEqual, false);
 $buttonEqual.addEventListener('click', handleClickEqual, false);
 
 function handleClickNumber() {
